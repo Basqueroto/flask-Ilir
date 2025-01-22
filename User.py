@@ -16,7 +16,9 @@ class User:
         self.autentic = autentic
 
     def checkUser (self):
-        query = f'SELECT id FROM `User` WHERE Email = "{self.email}";'
+        print('start check')
+        query = f'SELECT id FROM `User` WHERE email = "{self.email}";'
         conexao = Conection()
         exis = conexao.get_query(query)
+        print('fim check')
         return exis

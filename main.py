@@ -1,12 +1,14 @@
-from flask import Flask, jsonify, request
-import os
+from flask import Flask,request, jsonify
 from flask_cors import CORS
-import random
+import os
+import smtplib
 import smtplib
 import email.message
 import jwt
+import json
 from datetime import date, timedelta, datetime
 import hashlib
+import random
 
 from Conection import *
 from User import *
@@ -30,10 +32,12 @@ def cadastro ():
     userId = request.json.get('userId')
     storeRegister = request.json.get('storeRegister')
 
-    # verificando se o cadastro já existe
-    user = User(email, password, 'test')
-    check = user.checkUser()
+    print(name, email, password, consumer, delivery, store, driverLicence, birth, userId, storeRegister)
 
+    # verificando se o cadastro já existe
+    user = User(email)
+    check = user.checkUser()
+    print(check)
     if check:
         return jsonify({"status": "usuário já cadastrado"})
     else:

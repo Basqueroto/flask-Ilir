@@ -3,7 +3,7 @@ import mysql.connector
 class Conection:
     def add_query (self, query):
         try:
-            conect = mysql.connector.connect(user="root", password="IPSpPLXXeWLJqBoRDpxYJpWGDGIeplcK", host="mysql.railway.internal", database='railway', port='3306', auth_plugin='mysql_native_password')
+            conect = mysql.connector.connect(user="root", password="IPSpPLXXeWLJqBoRDpxYJpWGDGIeplcK", host="junction.proxy.rlwy.net", database='railway', port='54210', auth_plugin='mysql_native_password')
             cursor = conect.cursor()
             inserir = query
             cursor.execute(inserir)
@@ -18,9 +18,8 @@ class Conection:
 
     def get_query(self, query):
         try:
-            conect = mysql.connector.connect(user="root", password="b2AHfBd4g51AD31f25dHFaAC66f22-6d",
-                                             host="monorail.proxy.rlwy.net", database='railway', port='17217',
-                                             auth_plugin='mysql_native_password')
+            conect = mysql.connector.connect(user="root", password="EVAZVDalMqJvPwgpdbwIcQaAnkZePUWE", host="autorack.proxy.rlwy.net", database='railway', port='57960', auth_plugin='mysql_native_password')
+            print('conection open')
             cursor = conect.cursor()
             inserir = query
             cursor.execute(inserir)
