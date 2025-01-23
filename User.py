@@ -16,6 +16,7 @@ class User:
         self.autentic = autentic
 
     def checkUser (self):
+
         print('start check')
         query = f'SELECT id FROM `User` WHERE email = "{self.email}";'
         conexao = Conection()

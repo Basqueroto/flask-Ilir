@@ -10,7 +10,6 @@ from datetime import date, timedelta, datetime
 import hashlib
 import random
 
-from Conection import *
 from User import *
 
 app = Flask(__name__)
