@@ -7,10 +7,10 @@ class Conection:
         try:
             conect = mysql.connector.connect(
                 user="root",
-                password="EVAZVDalMqJvPwgpdbwIcQaAnkZePUWE",
+                password="vuXIWSyWOtDLSaeNtlNNQMyXhHgDBYLg",
                 host="autorack.proxy.rlwy.net",
                 database="railway",
-                port=57960
+                port=32803
             )
             cursor = conect.cursor()
             inserir = query
@@ -26,7 +26,13 @@ class Conection:
 
     def get_query(self, query):
         try:
-            conect = mysql.connector.connect(user="root", password="vuXIWSyWOtDLSaeNtlNNQMyXhHgDBYLg", host="autorack.proxy.rlwy.net", database='railway', port='32803', auth_plugin='mysql_native_password')
+            conect = mysql.connector.connect(
+                user="root",
+                password="vuXIWSyWOtDLSaeNtlNNQMyXhHgDBYLg",
+                host="autorack.proxy.rlwy.net",
+                database="railway",
+                port=32803
+            )
             print('conection open')
             cursor = conect.cursor()
             inserir = query

@@ -21,5 +21,4 @@ class User:
         query = f'SELECT id FROM `User` WHERE email = "{self.email}";'
         conexao = Conection()
         exis = conexao.get_query(query)
-        print('fim check')
         return exis

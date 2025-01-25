@@ -1,5 +1,4 @@
 from flask import Flask,request, jsonify
-from flask_cors import CORS
 import os
 import smtplib
 import smtplib
@@ -9,6 +8,8 @@ import json
 from datetime import date, timedelta, datetime
 import hashlib
 import random
+
+from flask_cors import CORS
 
 from User import *
 
@@ -23,15 +24,15 @@ def cadastro ():
     name = request.json.get('name')
     email = request.json.get('email')
     password = request.json.get('password')
-    consumer = request.json.get('consumer')
-    delivery = request.json.get('delivery')
-    store = request.json.get('store')
-    driverLicence = request.json.get('driverLicence')
-    birth = request.json.get('birth')
-    userId = request.json.get('userId')
-    storeRegister = request.json.get('storeRegister')
+    # consumer = request.json.get('consumer')
+    # delivery = request.json.get('delivery')
+    # store = request.json.get('store')
+    # driverLicence = request.json.get('driverLicence')
+    # birth = request.json.get('birth')
+    # userId = request.json.get('userId')
+    # storeRegister = request.json.get('storeRegister')
 
-    print(name, email, password, consumer, delivery, store, driverLicence, birth, userId, storeRegister)
+    print(name, email, password)
 
     # verificando se o cadastro já existe
     user = User(email)
@@ -56,10 +57,10 @@ def cadastro ():
 
         msg = email.message.Message()
         print(msg)
-        msg['Subject'] = "Código Adapt.AI"
-        msg['From'] = 'adapt.AiEducation@gmail.com'
+        msg['Subject'] = "Código Everett"
+        msg['From'] = 'everettbakersco@gmail.com'
         msg['To'] = f'{email}'
-        password = 'yxfi sovv kztw tgml'
+        password = 'dhly dmqw hhgk ddvc'
         msg.add_header('Content-Type', 'text/html')
         msg.set_payload(corpo_email)
 
@@ -70,7 +71,7 @@ def cadastro ():
         s.sendmail(msg['From'], [msg['To']], msg.as_string().encode('utf-8'))
 
         global secretKey
-        payload = {'code': code, 'nome': name, 'email': email, 'senha': password}
+        payload = {'nome': name, 'email': email, 'senha': password}
         token = jwt.encode(payload, secretKey, algorithm='HS256')
 
         # calculo de vencimento
