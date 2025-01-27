@@ -19,7 +19,11 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 #constantes
 secretKey = '711641683'
 
-@app.route('/cad', methods=['POST'])
+@app.route('/')
+def init ():
+    return jsonify({'init': 'init test'})
+
+@app.route('/register', methods=['POST'])
 def cadastro ():
     name = request.json.get('name')
     email = request.json.get('email')

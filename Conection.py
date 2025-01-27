@@ -28,10 +28,10 @@ class Conection:
         try:
             conect = mysql.connector.connect(
                 user="root",
-                password="vuXIWSyWOtDLSaeNtlNNQMyXhHgDBYLg",
-                host="autorack.proxy.rlwy.net",
+                password="G12A6faE43BA643FgH-Ag5dEF42Gb5dC",
+                host="monorail.proxy.rlwy.net",
                 database="railway",
-                port=32803
+                port=48934
             )
             print('conection open')
             cursor = conect.cursor()
